@@ -1,0 +1,49 @@
+define({ 
+  preShow: function(){
+    var dataOne=[[{
+      "lblHeader" : "My Savings"
+    },
+    [{
+      "lblType":"AccountType : ",
+      "lblNumber":"AccountNumber",
+      "lblAccountType":"My Savings",
+      "lblAccountNum":"1245"
+    },{
+      "lblType":"AccountType : ",
+      "lblNumber":"AccountNumber",
+      "lblAccountType":"My Savings",
+      "lblAccountNum":"4521"
+    },
+     {
+      "lblType":"AccountType : ",
+      "lblNumber":"AccountNumber",
+      "lblAccountType":"My Savings",
+      "lblAccountNum":"3458"
+    }]           
+   ]];
+    this.view.SegmentChecking.addSectionAt(dataOne, 0);
+    var dataTwo=[[{
+      "lblHeader":"My Checking"
+    },
+    [{
+      "lblType":"AccountType : ",
+      "lblNumber":"AccountNumber",
+      "lblAccountType":"My Checking",
+      "lblAccountNum":"1245"
+    },{
+      "lblType":"AccountType : ",
+      "lblNumber":"AccountNumber",
+      "lblAccountType":"My Checking",
+      "lblAccountNum":"4521"
+    },
+     {
+      "lblType":"AccountType : ",
+      "lblNumber":"AccountNumber",
+      "lblAccountType":"My Checking",
+      "lblAccountNum":"3458"
+    }]
+    ]];
+    this.view.SegmentChecking.addSectionAt(dataTwo, 1);
+  }
+
+ });
