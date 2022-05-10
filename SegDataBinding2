@@ -1,0 +1,46 @@
+define({ 
+  preShow: function(){
+   var details=[];
+   var details1={};
+   var accounts = [
+     {
+      "accountType":"My Checking",
+      "accountNum":"3254"
+      },
+      {
+      "accountType":"My Checking",
+      "accountNum":"0792"
+      },
+      {
+      "accountType":"My Checking",
+      "accountNum":"7896"
+      },
+      {
+      "accountType":"My Checking",
+      "accountNum":"3465"
+      },
+      {
+      "accountType":"My Savings",
+      "accountNum":"1268"
+      },
+      {
+      "accountType":"My Savings",
+      "accountNum":"4567"
+      }
+      ];
+       for(var i=0;i<accounts.length;i++){
+
+       if(accounts[i].lblAccTypeName ==="My Checking"){
+
+       details1["text1Value"]={
+         "text":accounts[i].lblAccTypeName
+       };
+       var widgetDataMap={
+         "lblAccTypeName":"text1Value"
+       };
+       data.push(details1);
+       this.view.segRow.widgetDataMap=widgetDataMap;
+       this.view.segRow.setData(details);
+       }
+       //is.view.segRow.setData(details);
+       }
