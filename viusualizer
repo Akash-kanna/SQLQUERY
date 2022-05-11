@@ -50,3 +50,95 @@ define({
 
 
 https://teams.microsoft.com/l/meetup-join/19%3ameeting_MjI3ODI4ZTktOTc3Mi00MGJjLTlmMDEtMzZlMDRlYjRmOWEz%40thread.v2/0?context=%7b%22Tid%22%3a%22406f6fb2-e087-4d29-9642-817873fddc4c%22%2c%22Oid%22%3a%2222402215-4d1e-4ac6-b905-20bd1dc07815%22%7d
+
+
+
+
+
+
+
+
+
+
+preShow : function(){
+   var accounts = [
+  {
+  "accountType":"My Checking",
+  "accountNum":"3254"
+  },
+  {
+  "accountType":"My Checking",
+  "accountNum":"0792"
+  },
+  {
+  "accountType":"My Checking",
+  "accountNum":"7896"
+  },
+  {
+  "accountType":"My Checking",
+  "accountNum":"3465"
+  },
+  {
+  "accountType":"My Savings",
+  "accountNum":"1268"
+  },
+  {
+  "accountType":"My Savings",
+  "accountNum":"4567"
+  }
+  ];
+   this.insertData(accounts);
+ },
+  insertData : function(accounts){
+  var accountData = [];
+  var accountTypeData={};
+   var index;
+   
+   
+    for(index=0; index<accounts.length; index++)
+      {
+    if(accounts[index].accountType === "My Checking")
+      {
+        
+     accountTypeData["lbl1Data"]={
+       "text" : accounts[index].accountType
+        };
+        accountTypeData["lbl2Data"]={
+          "text" : accounts[index].accountNum
+        };
+     
+        var widgetDataMap={
+          "lblAccountType" : "lbl1Data",
+          "lblAccountNum" : "lbl2Data"
+        };
+        accountData.push(accountTypeData);
+        this.view.SegChecking.widgetDataMap=widgetDataMap;
+            this.view.SegChecking.setData(accountData);
+        accountTypeData={};
+        
+      } 
+        
+      }
+   for(index=0;index<accounts.length;index++)
+     {
+       if(accounts[index].accountType === "My Savings")
+         {
+           accountTypeData["lbl1Data"]={
+             "text" : accounts[index].accountType
+           };
+           accountTypeData["lbl2Data"]={
+             "text" : accounts[index].accountNum
+           };
+           var widgetMap = {
+             "lblAccountType" : "lbl1Data",
+             "lblAccountNum" : "lbl2Data"
+           };
+           accountData.push(accountTypeData);
+           this.view.SegChecking.widgetDataMap = widgetMap;
+             this.view.SegChecking.setData(accountData);
+           accountTypeData={};
+         }
+     }
+ 
+   
+ },
